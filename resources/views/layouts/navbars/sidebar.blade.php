@@ -17,30 +17,30 @@
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-          <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-          <p>{{ __('Laravel Examples') }}
-            <b class="caret"></b>
-          </p>
-        </a>
-        <div class="collapse show" id="laravelExample">
-          <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('profile.edit') }}">
-                <span class="sidebar-mini"> UP </span>
-                <span class="sidebar-normal">{{ __('User profile') }} </span>
-              </a>
-            </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
-                <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
+        <li class="nav-item {{ ($activePage == 'category' || $activePage == 'category-create') ? ' active' : '' }}">
+            <a class="nav-link" data-toggle="collapse" href="#categories" aria-expanded="true">
+                <i class="material-icons">category</i>
+                <p>{{ __('Categories') }}
+                    <b class="caret"></b>
+                </p>
+            </a>
+            <div class="collapse show" id="categories">
+                <ul class="nav">
+                    <li class="nav-item{{ $activePage == 'category' ? ' active' : '' }}">
+                        <a class="nav-link" href="{{ route('category.index') }}">
+                            <i class="material-icons">format_list_numbered</i>
+                            <span class="sidebar-normal">{{ __('Category List') }} </span>
+                        </a>
+                    </li>
+                    <li class="nav-item{{ $activePage == 'category-create' ? ' active' : '' }}">
+                        <a class="nav-link" href="{{ route('category.create') }}">
+                            <i class="material-icons">add</i>
+                            <span class="sidebar-normal">{{ __('Category Create') }} </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>

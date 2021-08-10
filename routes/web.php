@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +24,12 @@ Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
+
+
 Route::group(['middleware' => 'auth'], function () {
+    Route::resource("category",CategoryController::class);
+
+
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
