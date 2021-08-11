@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    //TODO make class relations
+
     use HasFactory;
+    protected $table = "blogs";
+    protected $primaryKey = "id";
+    protected $fillable = ['title','description','category_id','image_path','user_id'];
+
 }
