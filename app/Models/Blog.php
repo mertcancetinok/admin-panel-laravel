@@ -13,4 +13,10 @@ class Blog extends Model
     protected $primaryKey = "id";
     protected $fillable = ['title','description','category_id','image_path','user_id'];
 
+    public function categories(){
+        return $this->belongsTo(Category::class,'category_id','id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

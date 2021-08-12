@@ -18,7 +18,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $blogs = Blog::all();
+        return view('blog.index')->with('blogs',$blogs);
     }
 
     /**
@@ -78,7 +79,12 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blog = Blog::find($id);
+        $categories = Category::all();
+        return view('blog.edit',[
+            'blog' => $blog,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -90,7 +96,19 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $blog = Blog::where('id',$id);
+        $blog->update([
+                    'title' => $request->input('title'),
+                    'description' => $request->input('description'),
+                    'category_id' => $request->input('category'),
+                    'image_path' => $request->input('image_path')
+                ]);
+        return redirect('/blog');
     }
 
     /**
@@ -101,6 +119,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::find($id)
+                ->delete();
+        return redirect('/blog');
     }
 }

@@ -25,12 +25,15 @@
                         <div class="form-group my-5">
                             <label for="category">Category Name</label>
                             <select name="category" id="category" class="form-control">
-                                @foreach($categories as $category)
+                                @forelse($categories as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
-                                @endforeach
+                                @empty
+                                    <option value="category-not-found">Category not found</option>
+                                @endforelse
                             </select>
 
                         </div>
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
