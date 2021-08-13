@@ -65,10 +65,10 @@
                 </ul>
             </div>
         </li>
-        <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('table') }}">
-          <i class="material-icons">content_paste</i>
-            <p>{{ __('Table List') }}</p>
+        <li class="nav-item{{ $activePage == 'comment' ? ' active' : '' }}">
+        <a class="nav-link" href="/comment">
+          <i class="material-icons">comment</i>
+            <p>{{ __('Comments') }}</p>
         </a>
       </li>
         <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">

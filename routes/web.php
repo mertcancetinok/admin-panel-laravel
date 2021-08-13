@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,7 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->
 Route::group(['middleware' => 'auth'], function () {
     Route::resource("category",CategoryController::class);
     Route::resource("blog",BlogController::class);
+    Route::resource("comment",CommentController::class);
 
 	Route::get('table-list', function () {
 		return view('pages.table_list');
