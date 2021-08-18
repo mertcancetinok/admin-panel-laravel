@@ -73,9 +73,15 @@
         </a>
       </li>
         <li class="nav-item{{ $activePage == 'contact' ? ' active' : '' }}">
-            <a class="nav-link" href="/comment">
+            <a class="nav-link" href="/contact">
                 <i class="material-icons">contact_page</i>
                 <p>{{ __('Contacts') }}</p>
+            </a>
+        </li>
+        <li class="nav-item{{ $activePage == 'user' ? ' active' : '' }}">
+            <a class="nav-link" href="/user">
+                <i class="material-icons">person</i>
+                <p>{{ __('Users') }}</p>
             </a>
         </li>
     </ul>
